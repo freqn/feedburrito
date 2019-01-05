@@ -4,6 +4,5 @@ source "https://rubygems.org"
 ruby '2.5.3'
 
 gem 'twitter'
-gem 'peach'
 gem 'activesupport', '~> 5.0', '>= 5.0.0.1'
 
