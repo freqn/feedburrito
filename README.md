@@ -1,4 +1,4 @@
-# Delete-Tweets
+# FeedCleaner
 
 ### Description
 
