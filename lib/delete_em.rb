@@ -1,8 +1,8 @@
 require_relative './services/client.rb'
 require 'active_support/all'
 
-USERNAME = '' # Twitter username (without @)
-DURATION  = '' # Preserve a duration of activitiy (from now)
+USERNAME = 'freqn' # Twitter username (without @)
+DURATION  = 0 # Preserve a duration of activitiy (from now)
 
 class DeleteEm
   include Service
@@ -22,7 +22,7 @@ class DeleteEm
       end
     end
   end
-  
+
   private
 
   def convert(time)
