@@ -30,7 +30,7 @@ class DeleteEm
   end
 
   def purge(tweet)
-    client.destroy_tweet tweet.id
+    client.destroy_tweet(tweet.id)
   end
 end
 
