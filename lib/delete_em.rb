@@ -6,7 +6,7 @@ DURATION = 0 # Preserve a duration of activitiy (from now)
 
 class DeleteEm
   include Service
-  attr_reader :client, :day_count
+  attr_reader :client
 
   def initialize
     @client = Service::Client.authenticate
