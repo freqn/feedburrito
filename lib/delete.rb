@@ -4,7 +4,7 @@ require 'active_support/all'
 USERNAME = '' # Twitter username (without @)
 DURATION = 0 # Preserve a duration of activitiy (from now)
 
-class DeleteEm
+class Delete
   include Service
   attr_reader :client
 
@@ -12,8 +12,8 @@ class DeleteEm
     @client = Service::Client.authenticate
   end
 
-  def get_timeline
-    statuses = client.user_timeline(USERNAME, {:count => 200})
+  def clean_timeline
+    statuses = fetch_timeline
 
     statuses.each do |s| 
       s_time = convert(s.created_at)
@@ -25,6 +25,10 @@ class DeleteEm
 
   private
 
+  def fetch_timeline
+    client.user_timeline(USERNAME, {:count => 200})
+  end
+
   def convert(time)
     time.to_time.iso8601
   end
@@ -34,4 +38,4 @@ class DeleteEm
   end
 end
 
-DeleteEm.new.get_timeline
+Delete.new.clean_timeline
