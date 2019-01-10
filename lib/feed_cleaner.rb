@@ -1,4 +1,4 @@
-require_relative './services/client.rb'
+require_relative './services/rest_client.rb'
 require 'active_support/all'
 
 USERNAME = '' # Twitter username (without @)
@@ -9,7 +9,7 @@ class FeedCleaner
   attr_reader :client
 
   def initialize
-    @client = Service::Client.authenticate
+    @client = Service::RestClient.authenticate
   end
 
   def clean
