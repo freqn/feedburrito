@@ -23,7 +23,7 @@ class FeedSearcher
 
   def stream
     id = 0
-    topics = ["music","playlist","spotify","itunes","sirius","iheartradio","#AmazonMusic","#applemusic","pandora","soundcloud","song","songs"]
+    topics = []
     streamer.filter(track: topics.join(",")) do |object|
       unless object.retweeted_tweet?
         id += 1
